@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "rating": 4.33
+  },
+  {
+    "id": 2,
+    "name": "Harry Potter",
+    "author": "J.K. Rowling",
+    "rating": 4.49
+  },
+  {
+    "id": 3,
+    "name": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "rating": 4.27
+  },
+  {
+    "id": 4,
+    "name": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "rating": 4.26
+  },
+  {
+    "id": 5,
+    "name": "Twilight",
+    "author": "Stephenie Meyer",
+    "rating": 4.33
+  },
+  {
+    "id": 6,
+    "name": "The Book Thief",
+    "author": "Markus Zusak",
+    "rating": 4.37
+  },
+  {
+    "id": 7,
+    "name": "Animal Farm",
+    "author": "George Orwell",
+    "rating": 3.39
+  },
+  {
+    "id": 8,
+    "name": "The Chronicles of Narnia",
+    "author": "C.S. Lewis",
+    "rating": 4.26
+  },
+  {
+    "id": 9,
+    "name": "The Hobbit and The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "rating": 4.59
+  },
+  {
+    "id": 10,
+    "name": "Gone with the Wind",
+    "author": "Margaret Mitchell",
+    "rating": 4.29
+  },
+  {
+    "id": 11,
+    "name": "The Fault in Our Stars",
+    "author": "John Green",
+    "rating": 4.22
+  },
+  {
+    "id": 12,
+    "name": "The Giving Tree",
+    "author": "Shel Silverstein",
+    "rating": 4.37
+  },
+  {
+    "id": 13,
+    "name": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "rating": 3.85
+  },
+  {
+    "id": 14,
+    "name": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "rating": 3.84
+  },
+  {
+    "id": 15,
+    "name": "Memoirs of a Geisha",
+    "author": "Arthur Golden",
+    "rating": 5
+  }
+]
