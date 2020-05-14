@@ -4,28 +4,28 @@ import {
   GET_FAV_LIST,
   RATE_FAV_ITEM,
   RECEIVE_FAV_LIST,
-  TOGGLE_RANDOM_FAV_RATING
+  TOGGLE_RANDOM_FAV_RATING,
 } from "./types";
 
 export const getFavList = (): FavListActions => ({
-  type: GET_FAV_LIST
+  type: GET_FAV_LIST,
 });
 
 export const receiveFavList = (favItems: FavItem[]): FavListActions => ({
   type: RECEIVE_FAV_LIST,
-  payload: favItems
+  payload: favItems,
 });
 
 export const receiveFavListError = (errors: any): FavListActions => ({
   type: RECEIVE_FAV_LIST,
-  payload: errors
+  payload: errors,
 });
 
 export const rateFavItem = (favItem: FavItem): FavListActions => ({
   type: RATE_FAV_ITEM,
-  payload: favItem
+  payload: favItem,
 });
 
 export const toggleRandomFavRating = (): FavListActions => ({
-  type: TOGGLE_RANDOM_FAV_RATING
+  type: TOGGLE_RANDOM_FAV_RATING,
 });

@@ -5,7 +5,7 @@ export default function* sagas() {
   const sagas = [getFavListSaga];
 
   yield all(
-    sagas.map(saga =>
+    sagas.map((saga) =>
       spawn(function*() {
         while (true) {
           try {

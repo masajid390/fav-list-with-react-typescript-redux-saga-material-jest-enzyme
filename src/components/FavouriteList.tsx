@@ -10,8 +10,8 @@ const useStyles = makeStyles({
   card: {
     borderRadius: 0,
     borderTop: "1px solid #f0f0f0",
-    padding: "5px 0"
-  }
+    padding: "5px 0",
+  },
 });
 
 interface FavouriteListProps {
@@ -23,7 +23,7 @@ interface FavouriteListProps {
 
 const FavouriteList: React.FC<FavouriteListProps> = ({
   items,
-  updateRating
+  updateRating,
 }) => {
   const classes = useStyles();
   const [pagingProps, pageItems] = usePagination(items, 5);
@@ -37,7 +37,7 @@ const FavouriteList: React.FC<FavouriteListProps> = ({
         />
       ))}
       <Card className={classes.card}>
-        <Pagination {...pagingProps}/>
+        <Pagination {...pagingProps} />
       </Card>
     </>
   ) : (

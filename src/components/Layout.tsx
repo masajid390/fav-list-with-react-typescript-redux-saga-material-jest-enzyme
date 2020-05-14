@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import FavouriteList from "./FavouriteList";
 import {
   getFavList,
   rateFavItem,
-  toggleRandomFavRating
+  toggleRandomFavRating,
 } from "../store/fav-list/actions";
 import { AppState } from "../store/root-state";
 import { getRandomFloat, getRandomInt } from "../utils";
@@ -14,49 +14,56 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Container from '@material-ui/core/Container';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import Container from "@material-ui/core/Container";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   container: {
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '52px'
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "52px",
     },
-    [theme.breakpoints.up('sm')]: {
-      marginTop: '68px'
-    }
-  }
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "68px",
+    },
+  },
 }));
 
 const Layout = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { items, isRating, isFetching } = useSelector((state: AppState) => state.favList);
+  const { items, isRating, isFetching } = useSelector(
+    (state: AppState) => state.favList
+  );
   const [favItem, rating] = useFavItemRandomRating(items, isRating);
   const btnColor = isRating ? "secondary" : "default";
   const btnText = isRating ? "Stop Random Rating" : "Start Random Rating";
-  // cDM
+
   useEffect(() => {
     dispatch(getFavList());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
+
+  const updateRating = useCallback(
+    (favItem?: FavItem, rating?: number): void => {
+      if (favItem && rating) {
+        const _favItem = { ...favItem };
+        _favItem.rating = rating;
+        dispatch(rateFavItem(_favItem));
+      }
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   useEffect(() => {
     updateRating(favItem, rating);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [favItem, rating]);
-
-  const updateRating = (favItem: FavItem, rating: number): void => {
-    const _favItem = { ...favItem };
-    _favItem.rating = rating;
-    dispatch(rateFavItem(_favItem));
-  };
+  }, [favItem, rating, updateRating]);
 
   const toggleRating = (): void => {
     dispatch(toggleRandomFavRating());
@@ -82,19 +89,22 @@ const Layout = () => {
       </AppBar>
       <Container className={classes.container}>
         <FavouriteList
-        items={[...items]}
-        toggleRating={toggleRating}
-        updateRating={updateRating}
-        isRating={isRating}
-      />
+          items={[...items]}
+          toggleRating={toggleRating}
+          updateRating={updateRating}
+          isRating={isRating}
+        />
       </Container>
     </div>
   );
 };
 
-const useFavItemRandomRating = (items: FavItem[], isRating: boolean) => {
-  let [favItem, setFavItem] = useState();
-  let [rating, setRating] = useState();
+export const useFavItemRandomRating = (
+  items: FavItem[],
+  isRating: boolean
+): [FavItem | undefined, number | undefined] => {
+  let [favItem, setFavItem] = useState<FavItem>();
+  let [rating, setRating] = useState<number>();
 
   useEffect(() => {
     let intervalId: any = null;
@@ -112,8 +122,7 @@ const useFavItemRandomRating = (items: FavItem[], isRating: boolean) => {
         clearInterval(intervalId);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isRating]);
+  }, [isRating, items]);
   return [favItem, rating];
 };
 export default Layout;

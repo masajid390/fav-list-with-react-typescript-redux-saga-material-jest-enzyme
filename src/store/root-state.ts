@@ -7,5 +7,5 @@ export interface AppState extends DefaultRootState {
 }
 
 export default (): AppState => ({
-  favList: favListInitialState
+  favList: favListInitialState,
 });

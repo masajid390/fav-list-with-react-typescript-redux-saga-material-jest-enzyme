@@ -12,9 +12,9 @@ const usePagination = (items: Array<any>, pageLimit: number): [any, any] => {
     {
       count: Math.ceil(items.length / pageLimit),
       page: page,
-      onChange: handleChange
+      onChange: handleChange,
     },
-    getPageItems()
+    getPageItems(),
   ];
 };
 export default usePagination;

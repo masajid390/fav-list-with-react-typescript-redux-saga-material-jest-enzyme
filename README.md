@@ -1,32 +1,37 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Description
- Pick your top 10+ fav books with following functionality:
- * Rating system where you can rate each item. Order the list by the highest rated item to lowest rated item. Re-order the list, if needed, when user ranks an item.
- * A button called RANDOM RATING and on click of this button code will start rating random item at random time with random rating. And on same button press again it will stop random rating.
- 
+
+Pick your top 10+ fav books with following functionality:
+
+- Rating system where you can rate each item. Order the list by the highest rated item to lowest rated item. Re-order the list, if needed, when user ranks an item.
+- A button called RANDOM RATING and on click of this button code will start rating random item at random time with random rating. And on same button press again it will stop random rating.
+
 ### Tech stack
-* React
-* Typescript
-* Redux
-* Saga
-* Material UI
-* Jest
-* Enzyme
+
+- React
+- Typescript
+- Redux
+- Saga
+- Material UI
+- Jest
+- Enzyme
 
 ### Demo
 
-Check the [Demo](https://marslan390.github.io/fav-list-with-react-typescript-redux-saga-material-jest-enzyme/)
+Check the [Demo](https://masajid390.github.io/fav-list-with-react-typescript-redux-saga-material-jest-enzyme/)
 
 ### System Requirements
-* Node
-* Yarn
+
+- Node
+- Yarn
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `yarn install`
+
 Install all the dependencies listed within package.json in the local node_modules folder.
 
 ### `yarn start`

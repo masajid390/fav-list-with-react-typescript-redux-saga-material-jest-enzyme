@@ -5,7 +5,7 @@ import { receiveFavList, receiveFavListError } from "./actions";
 
 function* _getFavList() {
   const { data, status } = yield call(getApi, {
-    url: "/data/fav-list.json"
+    url: "/data/fav-list.json",
   });
   status === 200
     ? yield put(receiveFavList(data))

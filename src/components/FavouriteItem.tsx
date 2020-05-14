@@ -9,8 +9,8 @@ import { FavItem } from "../store/fav-list/types";
 
 const useStyles = makeStyles({
   card: {
-    borderRadius: 0
-  }
+    borderRadius: 0,
+  },
 });
 
 interface FavouriteItemProps {
@@ -20,7 +20,7 @@ interface FavouriteItemProps {
 
 const FavouriteItem: React.FC<FavouriteItemProps> = ({
   item,
-  updateRating
+  updateRating,
 }) => {
   const classes = useStyles();
 
