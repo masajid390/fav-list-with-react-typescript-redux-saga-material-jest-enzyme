@@ -46,8 +46,7 @@ const Layout = () => {
 
   useEffect(() => {
     dispatch(getFavList());
-    // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
 
   const updateRating = useCallback(
     (favItem?: FavItem, rating?: number): void => {
@@ -57,8 +56,7 @@ const Layout = () => {
         dispatch(rateFavItem(_favItem));
       }
     },
-    // eslint-disable-next-line
-    []
+    [dispatch]
   );
 
   useEffect(() => {
